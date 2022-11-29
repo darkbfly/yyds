@@ -3,16 +3,16 @@
 开卡延迟,默认 4000
 opencard_delayTime
 */
-const $ = new Env("狂欢抢先购 入会下单有惊喜");
+const $ = new Env("福利沸腾，足够精彩");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require("./sendNotify") : "";
 let cookiesArr = [], cookie = "", message = "";
 let delayTime = process.env.opencard_delayTime ?? 4000;
 let ownCode = null;
 let authorCodeList = [
-  'f2db8999dbd842149a52ad99e8fb3374',
+  'a8f1aa221f4d43488180d152fc4584ac',
 ];
-let activityId = '7cc1806092924738bee676cf34c35fc3'
+let activityId = 'c123c2c8e9654cd4b876f4482ff773a4'
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item]);
