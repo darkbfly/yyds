@@ -106,5 +106,8 @@
   "jd_xl.js": "18 1,18 * * * ",
   "jd_xs_zzl.js": "2 6 * * *",
   "jd_hwj_sb.js": "10 6,20 * * *",
+  "jd_captian_xay.js": "10 4 * * *",
+  "jd_captian_flp.js": "10 4 * * *",
+  "jd_captian_anjia.js": "10 4 * * *",
   "jd_cfd_loop.js": "30 * * * * "
 }
