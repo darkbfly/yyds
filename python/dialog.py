@@ -84,7 +84,7 @@ class Frame(wx.Frame):
         # context.storage_state(path="auth.json")
         context.close()
         browser.close()
-        return 'pt_key={ptKey};pt_pin={ptPin}'.format(ptKey=jsonData['PT_KEY'], ptPin=jsonData['PT_PIN'])
+        return 'pt_key={ptKey};pt_pin={ptPin};'.format(ptKey=jsonData['PT_KEY'], ptPin=jsonData['PT_PIN'])
 
 
 
