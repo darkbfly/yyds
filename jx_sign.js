@@ -213,7 +213,6 @@ function signhb(type = 1) {
           console.log(JSON.stringify(err));
           console.log(`${$.name} query签到 API请求失败，请检查网路重试`);
         } else {
-          console.log( data );
           data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1])
           if ($.signhb_source === '5') {
             $.sqactive = '';
