@@ -26,10 +26,6 @@ services:
     component: fc
     actions: # 自定义执行逻辑
       pre-deploy: # 在deploy之前运行
-        - run: npm install typescript -g	# 要运行的命令行
-          path: ./ # 命令行运行的路径
-        - run: npm install ts-node -g	# 要运行的命令行
-          path: ./ # 命令行运行的路径
         - run: s build --custom-args ' --registry https://registry.npm.taobao.org'	# 要运行的命令行
           path: ./ # 命令行运行的路径
       # post-deploy: # 在deploy之后运行
