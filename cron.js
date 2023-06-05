@@ -1,6 +1,6 @@
 const { execFile } = require( 'child_process' );
 const { readFileSync } = require( 'fs' )
-
+const { exec } = require( 'child_process' );
 function loadScripts ( mins ) {
     const scripts = [];
     var options = { currentDate: new Date(), tz: 'Asia/Shanghai' };
@@ -40,21 +40,31 @@ exports.main_handler = async ( event, context, callback ) => {
             delete tasks[i - count];
         }
         console.log( `run script:${ script }` )
-        const name = './' + script
-        tasks[i] = new Promise( ( resolve ) => {
-            const child = execFile( process.execPath, [name] )
-            child.stdout.on( 'data', function ( data ) {
-                console.log( data )
+        if ( script.includes( ".ts" ) ) {
+            exec( 'ts-node ' + script, ( err, stdout, stderr ) => {
+                if ( err ) {
+                    console.error( err );
+                    return;
+                }
+                console.log( stdout );
+            } );
+        } else {
+            const name = './' + script
+            tasks[i] = new Promise( ( resolve ) => {
+                const child = execFile( process.execPath, [name] )
+                child.stdout.on( 'data', function ( data ) {
+                    console.log( data )
+                } )
+                child.stderr.on( 'data', function ( data ) {
+                    console.error( data )
+                } )
+                child.on( 'close', function ( code ) {
+                    console.log( `${ script } finished` )
+                    delete child
+                    resolve()
+                } )
             } )
-            child.stderr.on( 'data', function ( data ) {
-                console.error( data )
-            } )
-            child.on( 'close', function ( code ) {
-                console.log( `${ script } finished` )
-                delete child
-                resolve()
-            } )
-        } )
+        }
     }
 
     await Promise.all( tasks )
