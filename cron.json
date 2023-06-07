@@ -103,5 +103,9 @@
   "jd_xm818.js": "10 10 * * * ",
   "jd_xl.js": "18 1,18 * * * ",
   "jd_xs_zzl.js": "2 6 * * *",
-  "jd_hwj_sb.js": "10 6,20 * * *"
+  "jd_hwj_sb.js": "10 6,20 * * *",
+  "jd_joypark_task.js": "2 2,15 * * *",
+  "jd_vipgrowth.js": "9 9 * * 5",
+  "jd_cfd_fresh.js": "9 9 * * *",
+  "jd_wxttzq.js": "3 8 * * *"
 }
