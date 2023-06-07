@@ -43,6 +43,8 @@ services:
         instanceConcurrency: 15
         environmentVariables:
           ALIYUN: 'true'
+          isCommentPic: 'true'
+          isComment: 'true'
           TZ: 'Asia/Shanghai'
           JD_JOIN_ZLC: 'false'
           JD_COOKIE: ${env.JD_COOKIE}

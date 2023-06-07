@@ -107,5 +107,6 @@
   "jd_joypark_task.js": "2 2,15 * * *",
   "jd_vipgrowth.js": "9 9 * * 5",
   "jd_cfd_fresh.js": "9 9 * * *",
+  "jd_farautomation.js": "20 5,12,21 * * *",
   "jd_wxttzq.js": "3 8 * * *"
 }
